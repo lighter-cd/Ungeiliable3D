@@ -1,0 +1,25 @@
+.CMake框架
+	Win32
+		ok 只win32需要GLES头文件和模拟器的库。如何在CMake中指明
+		能否把GLES头文件做成外部设置
+		
+	Android
+	iOS
+	Linux
+	
+.创建各平台窗口
+.LOG文件接口
+.输入处理(点击，滑动，多点触控)
+.显示基本3d元素
+.console控制台和log阅读器(文字输入，文字显示)
+.测试框架
+.3d数学库
+.基本纹理(内嵌资源),光照shader
+.摄像机，灯光节点
+.bson模型解析(内嵌资源)
+.可增量更新的虚拟文件系统
+.shader pipeline
+.resource manager
+.node based Gameobject
+.脚本化
+.插件化
