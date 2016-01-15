@@ -22,11 +22,15 @@
 				
 		ok android_native_app_glue.h 找不到
 			是ndk的一个静态库
-			暂时复制源码 稍后合并
+			使用 cmake文件引入
 
-		找不到main符合
-			应该是链接库没写对？	set(CMAKE_LD_FLAGS "")
+		ok 找不到main符号
+			android下是生产.so不是执行文件。
 			
+		打包（到这一步才真正需要AndroidManifest.xml）
+			把so放到正确的目录中。
+			调用ant打包
+		
 		了解 cmake-android 的参数
 			
 		编译

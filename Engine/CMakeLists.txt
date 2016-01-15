@@ -11,12 +11,13 @@ if(WIN32)
     target_link_libraries( Engine ${OPENGLES3_LIBRARY} ${EGL_LIBRARY} )
 	
 elseif(ANDROID)
-	find_library(ANDROID_LOG log)
-	find_library(ANDROID_LIB android)
-	set( engine_platform_src Source/Android/esUtil_Android.c 
-							 Source/Android/android_native_app_glue.c )
+
+	include("${PROJECT_SOURCE_DIR}/CMake/android-cmake/AndroidNdkModules.cmake") # android_ndk_import_module_native_app_glue
+	android_ndk_import_module_native_app_glue() # native_app_glue
+
+	set( engine_platform_src Source/Android/esUtil_Android.c )
 	add_library( Engine STATIC ${engine_src} ${engine_platform_src} )
-    target_link_libraries( Engine ${OPENGLES3_LIBRARY} ${EGL_LIBRARY} ${ANDROID_LIB} ${ANDROID_LOG} )
+    target_link_libraries( Engine native_app_glue ${OPENGLES3_LIBRARY} ${EGL_LIBRARY} android log )
 else()
     find_package(X11)
     find_library(M_LIB m)
@@ -24,7 +25,3 @@ else()
 	add_library( Engine STATIC ${engine_src} ${engine_platform_src} )
     target_link_libraries( Engine ${OPENGLES3_LIBRARY} ${EGL_LIBRARY} ${X11_LIBRARIES} ${M_LIB} )
 endif()
-
-             
-
-

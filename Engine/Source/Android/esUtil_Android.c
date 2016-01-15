@@ -39,7 +39,7 @@
 //
 #include <android/log.h>
 #include <time.h>
-#include "Android/android_native_app_glue.h"
+#include <android_native_app_glue.h>
 #include "esUtil.h"
 
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "esUtil", __VA_ARGS__))
