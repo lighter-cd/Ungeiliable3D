@@ -1,11 +1,51 @@
 .CMake框架
 	Win32
 		ok 只win32需要GLES头文件和模拟器的库。如何在CMake中指明
+		ok 命令行下直接指定参数
+
 		能否把GLES头文件做成外部设置
-		
+			find_path(<VAR> name|NAMES name1)
+				可以带 NAMES 也可以不带 尽量带吧
+		做搜索OpenGLES SIM 的CMAKE模块
+			搜索安装信息 
+			直接指定路径
+
 	Android
+		ok 生成需要指定一些CMake的参数
+		   -G 
+		   -D CMAKE_TOOLCHAIN_FILE 
+		   -D CMAKE_MAKE_PROGRAM
+
+		ok 指定NDK的API-Level和arch   gl3.h需要 否则找不到头文件
+				ANDROID_NATIVE_API_LEVEL=android-21
+				ANDROID_ABI=armeabi-v7a
+				
+		ok android_native_app_glue.h 找不到
+			是ndk的一个静态库
+			暂时复制源码 稍后合并
+
+		找不到main符合
+			应该是链接库没写对？	set(CMAKE_LD_FLAGS "")
+			
+		了解 cmake-android 的参数
+			
+		编译
+		
+			
+		android 4.3.1 api level 18	开始支持 gles3.0
+		android 5.0.1 api level 21	开始支持 gles3.1
 	iOS
+		
 	Linux
+		
+	
+	批处理
+		ok cmake-clean.bat
+		cmake-android.bat
+		cmake-ios.sh
+		cmake-windows_sim-vs2015.bat
+		cmake-linux_sim.sh
+		cmake-android&ios-vs2015.bat
 	
 .创建各平台窗口
 .LOG文件接口
