@@ -36,3 +36,5 @@ solution "Ungeiliable3D"
 		includedirs { ".", "Engine/Include", "$(GLES3_EMU)/include" }
 		libdirs {"$(GLES3_EMU)"}
 		links { "Engine", "libEGL", "libGLESv2" }
+		configuration "linux"
+			links { "X11" }

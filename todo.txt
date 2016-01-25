@@ -1,55 +1,33 @@
-.CMake框架
-	Win32
-		ok 只win32需要GLES头文件和模拟器的库。如何在CMake中指明
-		ok 命令行下直接指定参数
+.使用原平台工具构建
+	ok 1.android 项目
+	2.xcode ios项目
+		framework
+		头文件
+		库文件
+		xcode项目结构
 
-		能否把GLES头文件做成外部设置
-			find_path(<VAR> name|NAMES name1)
-				可以带 NAMES 也可以不带 尽量带吧
-		做搜索OpenGLES SIM 的CMAKE模块
-			搜索安装信息 
-			直接指定路径
+.Premake框架
+	virtualbox在公司机器无法上网
 
-	Android
-		ok 生成需要指定一些CMake的参数
-		   -G 
-		   -D CMAKE_TOOLCHAIN_FILE 
-		   -D CMAKE_MAKE_PROGRAM
-
-		ok 指定NDK的API-Level和arch   gl3.h需要 否则找不到头文件
-				ANDROID_NATIVE_API_LEVEL=android-21
-				ANDROID_ABI=armeabi-v7a
-				
-		ok android_native_app_glue.h 找不到
-			是ndk的一个静态库
-			使用 cmake文件引入
-
-		ok 找不到main符号
-			android下是生产.so不是执行文件。
-			
-		打包（到这一步才真正需要AndroidManifest.xml）
-			把so放到正确的目录中。
-			调用ant打包
-		
-		了解 cmake-android 的参数
-			
-		编译
-		
-			
-		android 4.3.1 api level 18	开始支持 gles3.0
-		android 5.0.1 api level 21	开始支持 gles3.1
-	iOS
-		
-	Linux
-		
+	ok .编译premake4
+	ok .编写 premake4 的windows桌面版本
+		ok.生成到指定目录	--to=
+		ok.如何使用环境变量 $()
+		ok 如何指定外部库和头文件路径
+		ok 不同平台的不同文件包含
+	
+	.编写 premake4 的android版本
+	.编写 premake4 的linux桌面版本
+	.编写 premake4 的ios版本
+	.编写 premake4 的 vs2015 android&ios 版本
 	
 	批处理
-		ok cmake-clean.bat
-		cmake-android.bat
-		cmake-ios.sh
-		cmake-windows_sim-vs2015.bat
-		cmake-linux_sim.sh
-		cmake-android&ios-vs2015.bat
+		premake-clean.bat
+		premake-android.bat
+		premake-ios.sh
+		premake-windows_sim-vs2015.bat
+		premake-linux_sim.sh
+		premake-android&ios-vs2015.bat
 	
 .创建各平台窗口
 .LOG文件接口
