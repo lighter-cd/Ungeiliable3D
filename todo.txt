@@ -17,15 +17,26 @@
 		ok 不同平台的不同文件包含
 	
 	.编写 premake4 的android版本
+		ok GLES3库连接
+		ok 连接android库
+		ok LOCAL_CFLAGS += -DANDROID
+			defines { "ANDROID" }
+		连接 android_native_app_glue 库
+			增加命令 ImportModule ""
+		生成 Application.mk
+		
 	.编写 premake4 的linux桌面版本
 	.编写 premake4 的ios版本
+	.整合至 premake5
+		理解脚本目录调整的目的。
 	.编写 premake4 的 vs2015 android&ios 版本
 	
 	批处理
 		premake-clean.bat
-		premake-android.bat
-		premake-ios.sh
 		premake-windows_sim-vs2015.bat
+		premake-android.bat
+			拷贝AndroidManifest.xml 模版
+		premake-ios.sh
 		premake-linux_sim.sh
 		premake-android&ios-vs2015.bat
 	

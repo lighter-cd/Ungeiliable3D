@@ -26,24 +26,15 @@ solution "Ungeiliable3D"
 		configuration "linux"
 			files { "Engine/Source/LinuxX11/**.c" }
 		vpaths { [""] = "Engine" }
-		includedirs { "Engine/Include" }	
-		configuration "windows or linux"
-			includedirs { "$(GLES3_EMU)/include"}
+		includedirs { "Engine/Include", "$(GLES3_EMU)/include" }	
 
 	project "Samples"
 		kind "ConsoleApp"
 		language "C"
 		files { "Samples/Sample.c" }
 		vpaths { [""] = "Samples" }
-		includedirs { "Engine/Include" }	
-
-		configuration "windows or linux"
-			includedirs { "$(GLES3_EMU)/include"}
-			libdirs {"$(GLES3_EMU)"}
-			links { "Engine", "libEGL", "libGLESv2" }
-
-		configuration "android"
-			links { "Engine", "log", "android", "EGL", "GLESv3" }
-			defines { "ANDROID" }
+		includedirs { ".", "Engine/Include", "$(GLES3_EMU)/include" }
+		libdirs {"$(GLES3_EMU)"}
+		links { "Engine", "libEGL", "libGLESv2" }
 		configuration "linux"
 			links { "X11" }
