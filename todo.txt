@@ -21,14 +21,34 @@
 		ok 连接android库
 		ok LOCAL_CFLAGS += -DANDROID
 			defines { "ANDROID" }
+		
+		增加命令 
+			ok 如何区分一个api作用域是sln还是project?
+				solution
+				container
+				config
+			Application.mk 和 android.mk中冲突会有什么结果？
+				APP_PLATFORM 强制 TARGTE_PLATFORM
+
+			ndkplatform	APP_PLATFORM
+			ndktoolchainversion	NDK_TOOLCHAIN_VERSION
+			ndkstl	APP_STL
+			ndkabi	APP_ABI
+
+			ndkmodules
+			
+			1.注册api
+			2.
+			
+			
+			android 和 ios有不同？
+
 		连接 android_native_app_glue 库
-			增加命令 ImportModule ""
 		生成 Application.mk
 		
 	.编写 premake4 的linux桌面版本
 	.编写 premake4 的ios版本
-	.整合至 premake5
-		理解脚本目录调整的目的。
+	.premake4 增加 vs2013 vs2015的支持
 	.编写 premake4 的 vs2015 android&ios 版本
 	
 	批处理
