@@ -27,8 +27,15 @@
 				solution
 				container
 				config
-			Application.mk 和 android.mk中冲突会有什么结果？
-				APP_PLATFORM 强制 TARGTE_PLATFORM
+
+			简化
+				相应的都写在 Application.mk 中。
+				如果确实为空，就不写。
+			todo	
+				TARGTE_PLATFORM 不起作用？
+				Application.mk 和 android.mk中冲突会有什么结果？（Application强制android）
+				没有Application.mk会怎样？(不影响编译)
+				空的Application.mk会怎样？	
 
 			ndkplatform	APP_PLATFORM
 			ndktoolchainversion	NDK_TOOLCHAIN_VERSION

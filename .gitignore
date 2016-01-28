@@ -3,3 +3,5 @@ build/
 build_winsim/
 build_android/
 build_ios/
+*.deproj
+*.deuser
