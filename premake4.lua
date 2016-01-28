@@ -16,17 +16,23 @@ solution "Ungeiliable3D"
 		defines { "NDEBUG" }
 		flags { "Optimize" }
 		
+	configuration "android"
+        ndkabi "armeabi-v7a"	
+		ndkplatform "android-21"
+		ndkstl "default"
+		ndktoolchainversion "default"
 	
 	project "Engine"
 		kind "StaticLib"
 		language "C"
 		files { "Engine/Include/**.h", "Engine/Source/*.c" }
+		vpaths { [""] = "Engine" }
+		includedirs { "Engine/Include" }	
+
 		configuration "windows"
 			files { "Engine/Source/Win32/**.c" }
 		configuration "linux"
 			files { "Engine/Source/LinuxX11/**.c" }
-		vpaths { [""] = "Engine" }
-		includedirs { "Engine/Include" }	
 		configuration "windows or linux"
 			includedirs { "$(GLES3_EMU)/include"}
 
@@ -45,5 +51,8 @@ solution "Ungeiliable3D"
 		configuration "android"
 			links { "Engine", "log", "android", "EGL", "GLESv3" }
 			defines { "ANDROID" }
+			ndkmodule_imports { "android/native_app_glue" }
+            ndkmodule_staticlinks { "android_native_app_glue" }
+			
 		configuration "linux"
 			links { "X11" }

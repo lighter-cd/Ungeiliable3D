@@ -22,40 +22,54 @@
 		ok LOCAL_CFLAGS += -DANDROID
 			defines { "ANDROID" }
 		
-		增加命令 
+		ok 增加命令 
 			ok 如何区分一个api作用域是sln还是project?
 				solution
 				container
 				config
-
-			简化
-				相应的都写在 Application.mk 中。
-				如果确实为空，就不写。
-			todo	
-				TARGTE_PLATFORM 不起作用？
-				Application.mk 和 android.mk中冲突会有什么结果？（Application强制android）
-				没有Application.mk会怎样？(不影响编译)
-				空的Application.mk会怎样？	
-
-			ndkplatform	APP_PLATFORM
-			ndktoolchainversion	NDK_TOOLCHAIN_VERSION
-			ndkstl	APP_STL
-			ndkabi	APP_ABI
-
-			ndkmodules
+		
+			ok 生成 Application.mk
+				ok 简化
+					如果在release中,没有定义优化.	
+					相应的都写在 Application.mk 中。
+					至少优化标记写了.
+				todo	
+					TARGTE_PLATFORM 不起作用？
+					Application.mk 和 android.mk中冲突会有什么结果？（Application强制android）
+					没有Application.mk会怎样？(不影响编译)
+					空的Application.mk会怎样？
 			
-			1.注册api
-			2.
-			
+				ok 测试
+					ok 写对了应该出现在mk中
+					ok 写在project中应该报错
+						并未出错,但却是只出现在了 sln中.
+					ok 不在允许列表中应该报错
+					
+			ok 连接 android_native_app_glue 库	
+				ndkmodules
+				LOCAL_STATIC_LIBRARIES 和 LOCAL_LDLIBS 的区别
+				no 扩展模块都是静态的吗?
+					输入模块 模块名 库名 方式
+					
+					ndkmodules {
+						""
+					}
+					ndkmodulesstatic {
+						
+					}
+					ndkmodulesdynamic {
+					
+					}
+					
 			
 			android 和 ios有不同？
 
-		连接 android_native_app_glue 库
-		生成 Application.mk
+	ok .premake4 增加 vs2013 vs2015的支持
+		
+		
 		
 	.编写 premake4 的linux桌面版本
 	.编写 premake4 的ios版本
-	.premake4 增加 vs2013 vs2015的支持
 	.编写 premake4 的 vs2015 android&ios 版本
 	
 	批处理
