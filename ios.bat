@@ -1,0 +1,1 @@
+premake4 --os=ios xcode4

@@ -1,0 +1,1 @@
+premake4 --os=android android

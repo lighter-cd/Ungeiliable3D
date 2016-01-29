@@ -16,7 +16,7 @@
 		ok 如何指定外部库和头文件路径
 		ok 不同平台的不同文件包含
 	
-	.编写 premake4 的android版本
+	ok.编写 premake4 的android版本
 		ok GLES3库连接
 		ok 连接android库
 		ok LOCAL_CFLAGS += -DANDROID
@@ -65,7 +65,16 @@
 			android 和 ios有不同？
 
 	ok .premake4 增加 vs2013 vs2015的支持
-		
+	
+	ok 包含路径错误
+		如果是变量，就不能直接加  ../
+		使用正则表达式查找 $()
+
+	ok android_native_app_glue 在静态库项目中 完全失效。
+		能否直接使用输入
+		如果不能，要指定include路径
+		premake中仍然使用 ndkmodule_imports 脚本自动加入 include 路径
+	no premake中 vpath的理解
 		
 		
 	.编写 premake4 的linux桌面版本
@@ -74,10 +83,9 @@
 	
 	批处理
 		premake-clean.bat
-		premake-windows_sim-vs2015.bat
-		premake-android.bat
-			拷贝AndroidManifest.xml 模版
-		premake-ios.sh
+		ok premake-windows_sim-vs2015.bat
+		ok premake-android.bat
+		ok premake-ios.sh
 		premake-linux_sim.sh
 		premake-android&ios-vs2015.bat
 	
