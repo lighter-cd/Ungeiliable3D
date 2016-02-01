@@ -80,6 +80,8 @@
 		no 明确指定 ios 的版本
 		ok 去掉 ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 		ok debug版本中添加 ENABLE_TESTABILITY = YES;
+		ok productType = "com.apple.product-type.tool";
+			类型要对.
 
 		生成属性表文件 info.list
 			事先写好,存在于源文件目录.
@@ -87,6 +89,10 @@
 			PBXGroup
 				确定放在哪个组里?看两个项目怎么放的
 			XCBuildConfiguration
+			
+		为什么项目要加入.framework,Game	不需要?
+			必须指定sdk版本?
+			
 				
 		包含图标,启动画面资源
 			如何决定有没有启动画面?

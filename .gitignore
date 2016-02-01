@@ -1,5 +1,6 @@
 .DS_Store
 build/
+Build/
 build_winsim/
 build_android/
 build_ios/

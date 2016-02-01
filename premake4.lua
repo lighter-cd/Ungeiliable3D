@@ -62,6 +62,7 @@ solution "Ungeiliable3D"
 			links { "X11" }
 			
 		configuration "ios"
+			kind "WindowedApp"
 			xcodebuildoptions {
 				"TARGETED_DEVICE_FAMILY = \"1,2\";",
 				"INFOPLIST_FILE = Info.plist;"
