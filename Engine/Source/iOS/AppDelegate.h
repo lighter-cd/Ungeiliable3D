@@ -28,7 +28,7 @@
 // Publisher: Addison-Wesley Professional
 // URLs:      http://www.opengles-book.com
 //            http://my.safaribooksonline.com/book/animation-and-3d/9780133440133
-//#import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

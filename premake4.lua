@@ -36,6 +36,8 @@ solution "Ungeiliable3D"
 			files { "Engine/Source/Android/**.c" }
 			includedirs { "$(ANDROID_NDK)/sources/android/native_app_glue"}
 			defines { "ANDROID" }
+		configuration "ios"
+			files { "Engine/Source/iOS/**.h",  "Engine/Source/iOS/**.m"}	
 
 	project "Samples"
 		kind "ConsoleApp"
@@ -50,6 +52,7 @@ solution "Ungeiliable3D"
 			links { "Engine", "libEGL", "libGLESv2" }
 
 		configuration "android"
+			kind "SharedLib"
 			links { "Engine", "log", "android", "EGL", "GLESv3" }
 			defines { "ANDROID" }
 			ndkmodule_imports { "android/native_app_glue" }
@@ -57,3 +60,9 @@ solution "Ungeiliable3D"
 			
 		configuration "linux"
 			links { "X11" }
+			
+		configuration "ios"
+			xcodebuildoptions {
+				"TARGETED_DEVICE_FAMILY = \"1,2\";",
+				"INFOPLIST_FILE = Info.plist;"
+			}		

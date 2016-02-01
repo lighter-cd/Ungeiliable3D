@@ -81,6 +81,7 @@ extern void esMain( ESContext *esContext );
     if ([EAGLContext currentContext] == self.context) {
         [EAGLContext setCurrentContext:nil];
     }
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,8 +132,8 @@ extern void esMain( ESContext *esContext );
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    _esContext.width = view.drawableWidth;
-    _esContext.height = view.drawableHeight;
+    _esContext.width = (GLint)view.drawableWidth;
+    _esContext.height = (GLint)view.drawableHeight;
     
     if ( _esContext.drawFunc )
     {

@@ -61,33 +61,59 @@
 					
 					}
 					
+			ok 包含路径错误
+				如果是变量，就不能直接加  ../
+				使用正则表达式查找 $()
+
+			ok android_native_app_glue 在静态库项目中 完全失效。
+				能否直接使用输入
+				如果不能，要指定include路径
+				premake中仍然使用 ndkmodule_imports 脚本自动加入 include 路径
+			no premake中 vpath的理解
+		
 			
 			android 和 ios有不同？
 
 	ok .premake4 增加 vs2013 vs2015的支持
 	
-	ok 包含路径错误
-		如果是变量，就不能直接加  ../
-		使用正则表达式查找 $()
+	.编写 premake4 的ios版本
+		no 明确指定 ios 的版本
+		ok 去掉 ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+		ok debug版本中添加 ENABLE_TESTABILITY = YES;
 
-	ok android_native_app_glue 在静态库项目中 完全失效。
-		能否直接使用输入
-		如果不能，要指定include路径
-		premake中仍然使用 ndkmodule_imports 脚本自动加入 include 路径
-	no premake中 vpath的理解
+		生成属性表文件 info.list
+			事先写好,存在于源文件目录.
+			PBXFileReference
+			PBXGroup
+				确定放在哪个组里?看两个项目怎么放的
+			XCBuildConfiguration
+				
+		包含图标,启动画面资源
+			如何决定有没有启动画面?
+		故事板
 		
 		
 	.编写 premake4 的linux桌面版本
-	.编写 premake4 的ios版本
 	.编写 premake4 的 vs2015 android&ios 版本
 	
 	批处理
 		premake-clean.bat
 		ok premake-windows_sim-vs2015.bat
 		ok premake-android.bat
-		ok premake-ios.sh
+		premake-ios.sh
 		premake-linux_sim.sh
 		premake-android&ios-vs2015.bat
+		
+	XCode开发ios程序
+		1.xcode自己创建的 ios程序
+			建立workspace后,添加 proj 文件
+			建立proj的时候,就可以指定加入到workspace中.	
+				
+		
+			在哪里添加 include 目录
+			添加 c 语言库
+		2.book的程序编译
+		3.比较 1 和 2
 	
 .创建各平台窗口
 .LOG文件接口

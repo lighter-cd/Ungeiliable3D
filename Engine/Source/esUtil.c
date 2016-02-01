@@ -369,7 +369,7 @@ static int esFileRead ( esFile *pFile, int bytesToRead, void *buffer )
 #ifdef ANDROID
    bytesRead = AAsset_read ( pFile, buffer, bytesToRead );
 #else
-   bytesRead = fread ( buffer, bytesToRead, 1, pFile );
+   bytesRead = (int)fread ( buffer, bytesToRead, 1, pFile );
 #endif
 
    return bytesRead;
