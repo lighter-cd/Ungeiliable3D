@@ -40,13 +40,13 @@ solution "Ungeiliable3D"
 			files { "Engine/Source/iOS/**.h",  "Engine/Source/iOS/**.m"}	
 
 	project "Samples"
-		kind "ConsoleApp"
 		language "C"
 		files { "Samples/Sample.c" }
 		-- vpaths { [""] = "Samples" }
 		includedirs { "Engine/Include" }	
 
 		configuration "windows or linux"
+			kind "ConsoleApp"
 			includedirs { "$(GLES3_EMU)/include"}
 			libdirs {"$(GLES3_EMU)"}
 			links { "Engine", "libEGL", "libGLESv2" }
@@ -65,5 +65,6 @@ solution "Ungeiliable3D"
 			kind "WindowedApp"
 			xcodebuildoptions {
 				"TARGETED_DEVICE_FAMILY = \"1,2\";",
-				"INFOPLIST_FILE = Info.plist;"
-			}		
+				"INFOPLIST_FILE = Samples.plist;"
+			}
+			links { "Engine", "-framework Foundation", "-framework CoreGraphics", "-framework UIKit", "-framework GLKit", "-framework OpenGLES" }

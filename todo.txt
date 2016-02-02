@@ -85,17 +85,27 @@
 
 		生成属性表文件 info.list
 			事先写好,存在于源文件目录.
+			
 			PBXFileReference
 			PBXGroup
 				确定放在哪个组里?看两个项目怎么放的
 			XCBuildConfiguration
 			
-		为什么项目要加入.framework,Game	不需要?
-			必须指定sdk版本?
+			是不是只在项目属性中指定即可?不需要在文件中指定？
+			todo:实验
+
+		ok 连接库	不是使用的加入 framework 文件的形式
+			premake中 
+				link { "-framework Carbon" }
+				linkoptions { "-l-framework Foundation" }
+			todo:实验	
 			
-				
-		包含图标,启动画面资源
-			如何决定有没有启动画面?
+		ok 包含图标,启动画面资源
+			图标只在 .plist中指定即可
+			Default-568h@2x.png 被默认为启动画面
+			todo:实验
+
+		资源目录		
 		故事板
 		
 		

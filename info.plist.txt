@@ -1,0 +1,46 @@
+CFBundleInfoDictionaryVersion	Info.plist 格式的版本信息
+CFBundlePackageType			封包类型 这里应用程序为 APPL
+CFBundleSignature			是一個四個字母長度的字串，用以表示開發者對於應用程式的標識. 这里都写成 ????
+
+CFBundleDisplayName			设置程序安装后显示的名称。应⽤程序名称限制在10-12个字符,如果超出,将被显示缩写名称。
+CFBundleExecutable			程序安装包的名称
+CFBundleName				产品名称
+
+CFBundleDevelopmentRegion	默认区域语言资源
+CFBundleShortVersionString	面向用户市场的版本字符串
+CFBundleVersion				用以標識編譯版本(Bundle number)，你可以使用任何字串格式來表示這個版本。例如使用一個數字來表示編譯次數。
+CFBundleIdentifier			唯一标识字符串
+
+
+LSRequiresIPhoneOS			是否只能在IPhone下运行
+
+UIMainStoryboardFile		
+UIMainStoryboardFile~ipad
+UIRequiredDeviceCapabilities
+UIStatusBarHidden
+UISupportedInterfaceOrientations
+UISupportedInterfaceOrientations~ipad
+
+
+1.是否必须的
+2.默认值是什么
+
+
+CFBundleInfoDictionaryVersion
+CFBundlePackageType
+CFBundleSignature
+
+CFBundleDisplayName
+CFBundleExecutable
+CFBundleName
+
+CFBundleDevelopmentRegion
+CFBundleShortVersionString
+CFBundleVersion
+CFBundleIdentifier
+
+CFBundleIconFile
+LSApplicationCategoryType		public.app-category.games	app的分类
+UIStatusBarHidden
+UISupportedInterfaceOrientations
+UIViewControllerBasedStatusBarAppearance
