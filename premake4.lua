@@ -65,6 +65,7 @@ solution "Ungeiliable3D"
 			kind "WindowedApp"
 			xcodebuildoptions {
 				"TARGETED_DEVICE_FAMILY = \"1,2\";",
-				"INFOPLIST_FILE = Samples.plist;"
+				"INFOPLIST_FILE = samples.plist;"
 			}
-			links { "Engine", "-framework Foundation", "-framework CoreGraphics", "-framework UIKit", "-framework GLKit", "-framework OpenGLES" }
+			links { "Engine" }
+			linkoptions { "-framework Foundation", "-framework CoreGraphics", "-framework UIKit", "-framework GLKit", "-framework OpenGLES" }
