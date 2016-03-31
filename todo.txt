@@ -1,3 +1,9 @@
+1.建立xcode项目,把xcode项目改成 c 代码 + c 库
+2.分出libEngine.a
+3.lua建立xcode项目 包括icon集,故事版.
+4.图形化的 plist,icon,故事板编辑器
+
+
 .使用原平台工具构建
 	ok 1.android 项目
 	2.xcode ios项目
