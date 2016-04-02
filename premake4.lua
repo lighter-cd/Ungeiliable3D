@@ -65,7 +65,11 @@ solution "Ungeiliable3D"
 			kind "WindowedApp"
 			xcodebuildoptions {
 				"TARGETED_DEVICE_FAMILY = \"1,2\";",
-				"INFOPLIST_FILE = samples.plist;"
+				"INFOPLIST_FILE = ../../Samples/iOS/Samples-Info.plist;",
+				"ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;",
+				"ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;",
+				"PRODUCT_BUNDLE_IDENTIFIER = \"Lighter.Ungeiliable3D.${PRODUCT_NAME}\";"
 			}
+			files { "Samples/iOS/Samples-Info.plist","Samples/iOS/Images.xcassets"}
 			links { "Engine" }
 			linkoptions { "-framework Foundation", "-framework CoreGraphics", "-framework UIKit", "-framework GLKit", "-framework OpenGLES" }

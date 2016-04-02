@@ -30,12 +30,18 @@
 //            http://my.safaribooksonline.com/book/animation-and-3d/9780133440133
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    CGRect rt = [UIScreen mainScreen].bounds;
+    self.window = [[UIWindow alloc] initWithFrame:rt];
+    ViewController * viewController = [[ViewController alloc] init];
+    viewController.preferredFramesPerSecond = 60;
+    [self.window setRootViewController:viewController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
